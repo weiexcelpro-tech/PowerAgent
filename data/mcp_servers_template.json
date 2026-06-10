@@ -1,0 +1,26 @@
+# MCP Server Configuration Template
+# Copy to ~/.poweragent/settings.json "mcp_servers" key and customize
+
+{
+  "mcp_servers": {
+    "filesystem": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "C:\\Users\\YourUser\\Documents"],
+      "transport": "stdio"
+    },
+    "remote_sse": {
+      "url": "https://example.com/mcp/sse",
+      "transport": "sse",
+      "headers": {
+        "Authorization": "Bearer YOUR_TOKEN_HERE"
+      }
+    },
+    "remote_http": {
+      "url": "https://example.com/mcp",
+      "transport": "http",
+      "headers": {
+        "Authorization": "Bearer YOUR_TOKEN_HERE"
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+# Runtime state
+.poweragent/
+
+# Temporary files
+.temp/
+
+# Test artifacts
+undo_ct_file_*.txt
+
+# PowerShell
+*.swp
+*.swo
+*~
+
+# OS files
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# IDE
+.vscode/
+.idea/

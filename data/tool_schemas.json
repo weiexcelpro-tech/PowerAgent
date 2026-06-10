@@ -1,0 +1,163 @@
+{
+  "$schema": "https://raw.githubusercontent.com/modelcontextprotocol/schema/main/schema.json",
+  "description": "PowerAgent default tool schemas — maps tool names to their JSON Schema definitions",
+  "tools": {
+    "read_file": {
+      "name": "read_file",
+      "description": "Read a file from the local filesystem",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "path": { "type": "string", "description": "Absolute or relative file path" },
+          "offset": { "type": "integer", "description": "Line number to start reading from (1-indexed)" },
+          "limit": { "type": "integer", "description": "Maximum number of lines to read" }
+        },
+        "required": ["path"]
+      }
+    },
+    "write_file": {
+      "name": "write_file",
+      "description": "Write content to a file on the local filesystem",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "path": { "type": "string", "description": "Absolute or relative file path" },
+          "content": { "type": "string", "description": "Content to write" }
+        },
+        "required": ["path", "content"]
+      }
+    },
+    "edit_file": {
+      "name": "edit_file",
+      "description": "Replace exact text in a file",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "path": { "type": "string", "description": "File path" },
+          "old_text": { "type": "string", "description": "Exact text to find and replace" },
+          "new_text": { "type": "string", "description": "Replacement text" }
+        },
+        "required": ["path", "old_text", "new_text"]
+      }
+    },
+    "delete_file": {
+      "name": "delete_file",
+      "description": "Delete a file from the local filesystem",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "path": { "type": "string", "description": "Path of file to delete" }
+        },
+        "required": ["path"]
+      }
+    },
+    "list_files": {
+      "name": "list_files",
+      "description": "List files and directories",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "path": { "type": "string", "description": "Directory path to list" },
+          "pattern": { "type": "string", "description": "Glob pattern to filter results" },
+          "recursive": { "type": "boolean", "description": "List recursively" }
+        },
+        "required": ["path"]
+      }
+    },
+    "powershell": {
+      "name": "powershell",
+      "description": "Execute a PowerShell command",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "command": { "type": "string", "description": "Command to execute" },
+          "timeout": { "type": "integer", "description": "Timeout in seconds" },
+          "workdir": { "type": "string", "description": "Working directory" }
+        },
+        "required": ["command"]
+      }
+    },
+    "web_search": {
+      "name": "web_search",
+      "description": "Search the web using a search engine",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "query": { "type": "string", "description": "Search query" },
+          "engine": { "type": "string", "description": "Search engine (ddg, google, etc.)" }
+        },
+        "required": ["query"]
+      }
+    },
+    "agent": {
+      "name": "agent",
+      "description": "Delegate a task to a sub-agent",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string", "description": "Agent name" },
+          "prompt": { "type": "string", "description": "Task prompt" }
+        },
+        "required": ["name", "prompt"]
+      }
+    },
+    "agent_status": {
+      "name": "agent_status",
+      "description": "Check status of running agents",
+      "inputSchema": {
+        "type": "object",
+        "properties": {}
+      }
+    },
+    "skill": {
+      "name": "skill",
+      "description": "Invoke a named skill",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string", "description": "Skill name" },
+          "args": { "type": "object", "description": "Skill arguments" }
+        },
+        "required": ["name"]
+      }
+    },
+    "todo_create": {
+      "name": "todo_create",
+      "description": "Create a new TODO task",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "title": { "type": "string" },
+          "body": { "type": "string" },
+          "priority": { "type": "string", "enum": ["high", "medium", "low"] }
+        },
+        "required": ["title"]
+      }
+    },
+    "todo_update": {
+      "name": "todo_update",
+      "description": "Update a TODO task status",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "string" },
+          "status": { "type": "string", "enum": ["pending", "in_progress", "completed", "cancelled"] }
+        },
+        "required": ["id", "status"]
+      }
+    },
+    "memory_write": {
+      "name": "memory_write",
+      "description": "Write a memory entry",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "category": { "type": "string" },
+          "content": { "type": "string" },
+          "importance": { "type": "string", "enum": ["high", "medium", "low"] }
+        },
+        "required": ["category", "content"]
+      }
+    }
+  }
+}
