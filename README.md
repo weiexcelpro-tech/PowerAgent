@@ -1,13 +1,3 @@
----
-AIGC:
-  ContentProducer: '001191110102MAD55U9H0F10002'
-  ContentPropagator: '001191110102MAD55U9H0F10002'
-  Label: '1'
-  ProduceID: 'fc6d7a08-ad0d-49bb-8c55-f33ecfd7c162'
-  PropagateID: 'fc6d7a08-ad0d-49bb-8c55-f33ecfd7c162'
-  ReservedCode1: '54046123-a7d5-4bad-b7d5-032c2c415532'
-  ReservedCode2: '54046123-a7d5-4bad-b7d5-032c2c415532'
----
 
 # PowerAgent v0.8
 
