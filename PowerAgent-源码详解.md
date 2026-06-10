@@ -1,13 +1,3 @@
----
-AIGC:
-  ContentProducer: '001191110102MAD55U9H0F10002'
-  ContentPropagator: '001191110102MAD55U9H0F10002'
-  Label: '1'
-  ProduceID: 'fa2525c1-fc9a-4964-9308-8dd0131bd0f4'
-  PropagateID: 'fa2525c1-fc9a-4964-9308-8dd0131bd0f4'
-  ReservedCode1: 'b0b05582-de3b-45bc-88d2-17d85663e821'
-  ReservedCode2: 'b0b05582-de3b-45bc-88d2-17d85663e821'
----
 
 # PowerAgent v0.9 源码分析文档
 
@@ -635,4 +625,3 @@ Test-ContextWindowPressure → [safe/warn/critical]
   └── history.json                    ← 对话历史
 ```
 
-> 
