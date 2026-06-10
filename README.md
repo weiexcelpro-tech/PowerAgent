@@ -412,4 +412,4 @@ v0.8 已修复此问题。如果仍遇到，请确保使用 Windows Terminal 或
 power --uninstall
 ```
 
-> AI生成
+
