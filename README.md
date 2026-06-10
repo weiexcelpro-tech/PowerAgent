@@ -3,6 +3,8 @@
 
 > ⚡ 单文件 PowerShell 5.1 AI 智能体 — 零依赖，开箱即用
 
+
+受BashAgt项目启发，构建了PowerAgent。主要作为初学者学习项目。也可用于Windows运维及部分产品的智能化内核，
 PowerAgent 是一个基于 LLM 的终端智能体，以**纯 PowerShell 5.1** 编写，全部代码集中在单个文件 `PowerAgent.ps1` 中。无需包管理器、无需构建系统、无需安装额外依赖。
 
 - **LLM 后端**：支持 9 种 API 协议适配（DeepSeek / Qwen / ERNIE / GLM / Kimi / MiniMax / OpenAI / Anthropic / Generic OpenAI）
